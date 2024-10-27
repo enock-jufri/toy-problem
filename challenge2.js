@@ -1,3 +1,4 @@
+//prompts user for input as int and calls calculator function
 process.stdout.write("Enter speed: ");
 
 process.stdin.on("data", (data) => {
@@ -6,6 +7,7 @@ process.stdin.on("data", (data) => {
   process.stdin.pause();
 });
 
+// a function that calculates demerit points by taking speed as parameter
 function calculator(speed) {
   if (speed <= 70) {
     return "Ok";
