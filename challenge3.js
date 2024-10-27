@@ -1,3 +1,9 @@
+/** 
+ * prompts user for basic salary and benefits
+ * slipts the input into repective variables 
+ * calls the respective functions to output 
+ **/ 
+
 process.stdout.write("Enter basic salary and benefits in the format salary benefits: ");
 process.stdin.on("data", (data) => {
   const salary = data.toString().trim()
@@ -15,6 +21,7 @@ process.stdin.on("data", (data) => {
   process.stdin.pause();
 });
 
+// kra function to calculate tax
 const kra = function (salary) {
   switch (true) {
     case salary <= 24000:
@@ -30,6 +37,7 @@ const kra = function (salary) {
   }
 };
 
+// function calculates nhif deductions by taking in gross salary
 function nhif(salary) {
     if (salary <= 5999) return 150;
     else if (salary >= 6000 && salary <= 7999) return 300;
@@ -51,6 +59,7 @@ function nhif(salary) {
     else return 0;
 }
 
+// functions calculates nssf by taking gross salary as parameter
 function nssf(salary){
     return 0.06*salary
 }
